@@ -90,6 +90,19 @@
       align-items: center;
       justify-content: flex-end;
       animation: fadeUp 1s 0.3s ease both;
+      position: relative;
+    }
+    .hero-chara::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        linear-gradient(to bottom, var(--navy) 0%, transparent 22%),
+        linear-gradient(to top, var(--navy) 0%, transparent 8%),
+        linear-gradient(to right, transparent 70%, var(--navy) 100%),
+        linear-gradient(to left, transparent 85%, var(--navy) 100%);
+      pointer-events: none;
+      z-index: 2;
     }
     .bubble {
       background: var(--gold-lt);
