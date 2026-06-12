@@ -114,9 +114,19 @@
       border-bottom: 0;
     }
     .spotlight {
-      background: radial-gradient(ellipse 100% 90% at 50% 80%, #fffbf0 0%, #fdf5dc 45%, rgba(253,245,220,0) 75%);
+      position: relative;
       border-radius: 50% 50% 0 0 / 55% 55% 0 0;
       overflow: hidden;
+      background: radial-gradient(ellipse 100% 90% at 50% 85%, #fffbf0 0%, #fdf5dc 50%, rgba(13,31,78,0) 78%);
+    }
+    .spotlight::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      background:
+        radial-gradient(ellipse 85% 80% at 50% 58%, transparent 35%, var(--navy) 80%);
+      pointer-events: none;
+      z-index: 2;
     }
     .spotlight img {
       display: block;
@@ -124,8 +134,8 @@
       max-width: 280px;
       mix-blend-mode: multiply;
       animation: float 5s ease-in-out infinite;
-      -webkit-mask-image: radial-gradient(ellipse 78% 82% at 50% 55%, black 45%, transparent 90%);
-      mask-image: radial-gradient(ellipse 78% 82% at 50% 55%, black 45%, transparent 90%);
+      position: relative;
+      z-index: 1;
     }
 
     /* ===== コンテンツ ===== */
