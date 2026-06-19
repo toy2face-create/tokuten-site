@@ -297,13 +297,31 @@
     }
 
     @media (max-width: 640px) {
-      .hero-inner { grid-template-columns: 1fr; padding: 48px 24px 0; text-align: center; }
+      .hero-inner {
+        grid-template-columns: 1fr;
+        padding: 40px 20px 0;
+        text-align: center;
+      }
       .eyebrow { justify-content: center; }
-      .hero-left { padding-bottom: 20px; }
-      .spotlight img { max-width: 220px; }
+      .hero-left { padding-bottom: 12px; }
+      .hero h1 { font-size: clamp(28px, 8vw, 40px); }
+      .hero-chara { padding-top: 8px; }
+      .bubble { margin-bottom: 16px; font-size: 12px; padding: 8px 16px; }
+      .spotlight img { max-width: 200px; margin-right: 0; }
+
+      .content { padding: 48px 16px 56px; }
+      .sec-title { font-size: clamp(20px, 5vw, 26px); }
+
       .card { grid-template-columns: 1fr; }
-      .card-illust { min-height: 140px; flex-direction: row; padding: 0 20px; gap: 16px; }
-      .card-body { padding: 16px; }
+      .card-illust {
+        min-height: 130px;
+        flex-direction: column;
+        padding-bottom: 16px;
+      }
+      .card-body { padding: 16px 16px 20px; }
+      .card-title { font-size: 14px; }
+      .card-desc { font-size: 12px; }
+      .card-btn { font-size: 11px; padding: 8px 16px; }
     }
   </style>
 </head>
@@ -547,46 +565,52 @@
       </div>
     </div>
 
-    <!-- 05 本の山×電球×星 -->
+    <!-- 05 勉強机×本×ペン -->
     <div class="card">
       <div class="card-illust">
         <svg class="illust-bg" viewBox="0 0 140 180" xmlns="http://www.w3.org/2000/svg" preserveAspectRatio="xMidYMid slice">
           <defs>
-            <radialGradient id="g5" cx="50%" cy="55%" r="60%">
+            <radialGradient id="g5" cx="50%" cy="55%" r="65%">
               <stop offset="0%" stop-color="#1e2855"/>
               <stop offset="100%" stop-color="#070d22"/>
             </radialGradient>
           </defs>
           <rect width="140" height="180" fill="url(#g5)"/>
-          <!-- 輝きオーラ -->
-          <ellipse cx="70" cy="90" rx="45" ry="55" fill="#e8c46a" fill-opacity="0.05"/>
-          <!-- 本３冊積み -->
-          <rect x="22" y="135" width="96" height="14" rx="2" fill="#2a3f7a" stroke="#e8c46a" stroke-width="1.3"/>
-          <rect x="28" y="121" width="84" height="15" rx="2" fill="#1e2f60" stroke="#b8892e" stroke-width="1.3"/>
-          <rect x="35" y="108" width="70" height="14" rx="2" fill="#253570" stroke="#e8c46a" stroke-width="1.3"/>
-          <!-- 本の背表紙ライン -->
-          <line x1="70" y1="108" x2="70" y2="122" stroke="#e8c46a" stroke-width="0.8" opacity="0.4"/>
-          <line x1="70" y1="121" x2="70" y2="136" stroke="#e8c46a" stroke-width="0.8" opacity="0.4"/>
-          <!-- 電球 -->
-          <circle cx="70" cy="68" r="22" fill="#1a2a55" fill-opacity="0.8" stroke="#e8c46a" stroke-width="1.5"/>
-          <circle cx="70" cy="65" r="13" fill="#e8c46a" fill-opacity="0.15" stroke="#e8c46a" stroke-width="1"/>
-          <!-- 電球フィラメント -->
-          <path d="M63 62 Q67 56 70 62 Q73 68 77 62" stroke="#e8c46a" stroke-width="1.5" fill="none" stroke-linecap="round"/>
-          <!-- 電球底部 -->
-          <rect x="64" y="84" width="12" height="4" rx="1" fill="#e8c46a" opacity="0.7"/>
-          <rect x="66" y="88" width="8" height="3" rx="1" fill="#e8c46a" opacity="0.5"/>
-          <line x1="70" y1="91" x2="70" y2="108" stroke="#e8c46a" stroke-width="1.2" opacity="0.5"/>
-          <!-- 光線 -->
-          <line x1="70" y1="42" x2="70" y2="36" stroke="#e8c46a" stroke-width="1.5" stroke-linecap="round" opacity="0.7"/>
-          <line x1="87" y1="48" x2="91" y2="44" stroke="#e8c46a" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-          <line x1="53" y1="48" x2="49" y2="44" stroke="#e8c46a" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
-          <line x1="93" y1="65" x2="99" y2="65" stroke="#e8c46a" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
-          <line x1="47" y1="65" x2="41" y2="65" stroke="#e8c46a" stroke-width="1.5" stroke-linecap="round" opacity="0.5"/>
+          <!-- デスクランプ支柱 -->
+          <line x1="108" y1="118" x2="108" y2="62" stroke="#b8892e" stroke-width="2"/>
+          <line x1="108" y1="62" x2="90" y2="52" stroke="#b8892e" stroke-width="2"/>
+          <!-- ランプシェード -->
+          <path d="M80 44 L100 44 L95 56 L85 56 Z" fill="#1a2d60" stroke="#e8c46a" stroke-width="1.4"/>
+          <!-- ランプ光 -->
+          <ellipse cx="90" cy="57" rx="14" ry="4" fill="#e8c46a" fill-opacity="0.25"/>
+          <line x1="82" y1="60" x2="68" y2="80" stroke="#e8c46a" stroke-width="1" opacity="0.3"/>
+          <line x1="90" y1="62" x2="82" y2="85" stroke="#e8c46a" stroke-width="1" opacity="0.35"/>
+          <line x1="98" y1="60" x2="108" y2="80" stroke="#e8c46a" stroke-width="1" opacity="0.3"/>
+          <!-- 縦に並んだ本（背表紙） -->
+          <rect x="18" y="78" width="11" height="40" rx="1" fill="#2a4080" stroke="#e8c46a" stroke-width="1.2"/>
+          <rect x="31" y="83" width="11" height="35" rx="1" fill="#1e3560" stroke="#b8892e" stroke-width="1.2"/>
+          <rect x="44" y="75" width="9" height="43" rx="1" fill="#253575" stroke="#e8c46a" stroke-width="1.2"/>
+          <line x1="23" y1="78" x2="23" y2="118" stroke="#e8c46a" stroke-width="0.7" opacity="0.3"/>
+          <line x1="36" y1="83" x2="36" y2="118" stroke="#b8892e" stroke-width="0.7" opacity="0.3"/>
+          <!-- 開いた本（机の上） -->
+          <path d="M18 95 Q55 86 55 86 Q55 86 92 95 L90 118 Q55 109 55 109 Q55 109 20 118 Z" fill="#1a3060" fill-opacity="0.85" stroke="#b8892e" stroke-width="1.2"/>
+          <line x1="55" y1="86" x2="55" y2="118" stroke="#e8c46a" stroke-width="1.4" opacity="0.8"/>
+          <line x1="27" y1="100" x2="50" y2="96" stroke="#e8c46a" stroke-width="0.9" opacity="0.5"/>
+          <line x1="27" y1="107" x2="50" y2="103" stroke="#e8c46a" stroke-width="0.9" opacity="0.4"/>
+          <line x1="62" y1="96" x2="84" y2="100" stroke="#e8c46a" stroke-width="0.9" opacity="0.5"/>
+          <line x1="62" y1="103" x2="84" y2="107" stroke="#e8c46a" stroke-width="0.9" opacity="0.4"/>
+          <!-- ペン -->
+          <rect x="94" y="88" width="4" height="28" rx="2" fill="#e8c46a" opacity="0.85" transform="rotate(-15 96 102)"/>
+          <path d="M99 112 L103 118 L97 118 Z" fill="#e8c46a" opacity="0.7" transform="rotate(-15 100 115)"/>
+          <!-- 机天板 -->
+          <rect x="10" y="118" width="120" height="7" rx="2" fill="#182050" stroke="#e8c46a" stroke-width="1.5"/>
+          <!-- 机の脚 -->
+          <rect x="16" y="125" width="7" height="38" rx="1" fill="#101830" stroke="#b8892e" stroke-width="1"/>
+          <rect x="117" y="125" width="7" height="38" rx="1" fill="#101830" stroke="#b8892e" stroke-width="1"/>
           <!-- 星 -->
-          <circle cx="20" cy="35" r="2" fill="#e8c46a" opacity="0.5"/>
-          <circle cx="115" cy="28" r="1.5" fill="#e8c46a" opacity="0.4"/>
-          <circle cx="125" cy="155" r="1.5" fill="#e8c46a" opacity="0.3"/>
-          <circle cx="18" cy="155" r="1" fill="#e8c46a" opacity="0.4"/>
+          <circle cx="18" cy="35" r="2" fill="#e8c46a" opacity="0.5"/>
+          <circle cx="128" cy="28" r="1.5" fill="#e8c46a" opacity="0.4"/>
+          <circle cx="125" cy="165" r="1.5" fill="#e8c46a" opacity="0.3"/>
         </svg>
         <div class="card-badge">
           <span class="card-no-label">NO.</span>
